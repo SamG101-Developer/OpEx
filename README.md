@@ -7,7 +7,9 @@ supported:
 - Postfix operations
 - Unary operations
 
-## Example definitions (Binary)
+## Examples
+
+### Binary
 
 The float `avg` binary operator can be defined and used like this:
 
@@ -23,7 +25,7 @@ OPEX_MAKE_BIN_OP(avg, float, float) {
 auto x = 3.0f avg 5.0f;
 ```
 
-## Example definitions (Postfix)
+### Postfix
 
 The string `dbl` postfix operator can be defined and used like this:
 
@@ -39,7 +41,7 @@ OPEX_MAKE_POST_OP(dbl, std::string) {
 const auto w = "hello"s dbl;
 ```
 
-## Example definitions (Unary)
+### Unary
 
 The (messy) unique_ptr `mov` unary operator can be defined and used like this:
 
@@ -54,6 +56,29 @@ OPEX_MAKE_UNARY_OP(mov, std::unique_ptr<std::string> const&) {
 auto ptr2 = std::make_unique<std::string>("a unique string");
 test_function_3(mov ptr2);
 
+```
+
+## Builtins
+
+### Casting
+
+The `as` macro can be used to cast numbers between integral and floating point types, mimicking Rust's `as` keyword:
+
+```C++
+auto x = 5;
+auto y = x as F64; // y is 5.0f
+```
+
+### Error propagation
+
+The `try` macro can be used to propagate errors in functions that return `std::optional` or `std::expected`, like Rust's
+`?` operator:
+
+```C++
+auto test_function_2() -> std::expected<int, Error> {
+    const auto x = try(test_function_1());
+    return x + 1;
+}
 ```
 
 ## Limitations
