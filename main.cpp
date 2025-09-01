@@ -80,8 +80,9 @@ int main() {
     auto ptr2 = std::make_unique<std::string>("another unique string");
     test_function_3(mov_new ptr2);
 
-
+    auto a = 234;
     auto e = 123 as USize;
+    auto f = a as F64;
 
     return 0;
 }

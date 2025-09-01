@@ -75,7 +75,7 @@ struct opex::bin_op::RightInnerTagForOverload {
     struct name ## _unique {};                                                                                         \
     constexpr auto _ ## name ## _ = opex::bin_op::LeftInnerTagForOverload<name ## _unique>();                          \
     template <typename T>                                                                                              \
-    inline auto operator<(T &&lhs, opex::bin_op::LeftInnerTagForOverload<name ## _unique> const &) -> decltype(auto) { \
+    inline auto operator<(T lhs, opex::bin_op::LeftInnerTagForOverload<name ## _unique> const &) -> decltype(auto) { \
         return opex::bin_op::RightInnerTagForOverload<name ## _unique, T>(std::forward<T>(lhs));                       \
     }                                                                                                                  \
 

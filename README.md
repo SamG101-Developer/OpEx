@@ -65,8 +65,7 @@ test_function_3(mov ptr2);
 The `as` macro can be used to cast numbers between integral and floating point types, mimicking Rust's `as` keyword:
 
 ```C++
-auto x = 5;
-auto y = x as F64; // y is 5.0f
+auto y = 5 as F64; // y is 5.0f
 ```
 
 ### Error propagation
