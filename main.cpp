@@ -3,6 +3,7 @@
 #include <string>
 #include <memory>
 #include <opex/ops.hpp>
+#include <opex/cast.hpp>
 #include <opex/try.hpp>
 
 struct Error {
@@ -78,6 +79,9 @@ int main() {
 
     auto ptr2 = std::make_unique<std::string>("another unique string");
     test_function_3(mov_new ptr2);
+
+
+    auto e = 123 as USize;
 
     return 0;
 }
