@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 4.1.2)
-set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "d0edc3af-4c50-42ea-a356-e2862fe7a444")
+cmake_minimum_required(VERSION 4.4.0)
+set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "f35a9ac6-8463-4d38-8eec-5d6008153e7d")
 project(OpEx VERSION 0.1.0 LANGUAGES CXX)
 
 # Set standard and include some common packages.
@@ -10,7 +10,7 @@ set(CMAKE_CXX_MODULE_STD ON)
 # Collect source files.
 file(GLOB_RECURSE MODULE_SOURCES CONFIGURE_DEPENDS src/*.cpp)
 file(GLOB_RECURSE PUBLIC_HEADERS CONFIGURE_DEPENDS include/*.hpp)
-add_library(${PROJECT_NAME} STATIC ${MODULE_SOURCES})
+add_library(${PROJECT_NAME} STATIC)
 
 target_sources(${PROJECT_NAME} PUBLIC
         FILE_SET CXX_MODULES BASE_DIRS src include FILES ${MODULE_SOURCES}
