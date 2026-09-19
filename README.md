@@ -58,6 +58,23 @@ test_function_3(mov ptr2);
 
 ```
 
+#### Unary overloads
+
+A unary operator can accept further operand types (including templated ones) with
+`OPEX_MAKE_UNARY_OP_ADD_OVERLOAD`, used in the same module as the original operator. Trailing
+arguments, if any, become the template parameters:
+
+```C++
+OPEX_MAKE_UNARY_OP(checked, int) {
+    return check(rhs);
+}
+
+OPEX_UNARY_OP_ADD_OVERLOAD(checked, T*, typename T) {
+    return check(rhs);
+}
+#define checked 0 <_checked_>
+```
+
 ## Builtins
 
 ### Casting
