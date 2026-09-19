@@ -5,63 +5,61 @@ export module opex.cast;
 import opex.ops;
 import std;
 
-
 namespace opex::cast {
-    struct U8Type {
-    };
+  struct U8Type {
+  };
 
-    struct U16Type {
-    };
+  struct U16Type {
+  };
 
-    struct U32Type {
-    };
+  struct U32Type {
+  };
 
-    struct U64Type {
-    };
+  struct U64Type {
+  };
 
-    struct USizeType {
-    };
+  struct USizeType {
+  };
 
-    struct S8Type {
-    };
+  struct S8Type {
+  };
 
-    struct S16Type {
-    };
+  struct S16Type {
+  };
 
-    struct S32Type {
-    };
+  struct S32Type {
+  };
 
-    struct S64Type {
-    };
+  struct S64Type {
+  };
 
-    struct SSizeType {
-    };
+  struct SSizeType {
+  };
 
-    struct F32Type {
-    };
+  struct F32Type {
+  };
 
-    struct F64Type {
-    };
+  struct F64Type {
+  };
 
-    struct BoolType {
-    };
+  struct BoolType {
+  };
 
-    struct CharType {
-    };
+  struct CharType {
+  };
 
-    struct CharWType {
-    };
+  struct CharWType {
+  };
 
-    struct Char8Type {
-    };
+  struct Char8Type {
+  };
 
-    struct Char16Type {
-    };
+  struct Char16Type {
+  };
 
-    struct Char32Type {
-    };
+  struct Char32Type {
+  };
 }
-
 
 export constexpr auto U8 = opex::cast::U8Type{};
 export constexpr auto U16 = opex::cast::U16Type{};
@@ -82,9 +80,7 @@ export constexpr auto Char8 = opex::cast::Char8Type{};
 export constexpr auto Char16 = opex::cast::Char16Type{};
 export constexpr auto Char32 = opex::cast::Char32Type{};
 
-
 OPEX_MAKE_BIN_OP_OVERLOAD_MASTER(as);
-
 
 #define OPEX_CREATE_CAST_OVERLOADS_FOR(T)\
 OPEX_MAKE_BIN_OP_OVERLOAD(as, T, opex::cast::U8Type) {\
